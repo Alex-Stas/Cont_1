@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask Monitor UI</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Flask Backend Dashboard</h1>
+    <p class="hint">UI работает через nginx и ходит в backend по внутренней сети Docker Compose.</p>
+
+    <section class="card">
+      <h2>Состояние сервиса</h2>
+      <div class="actions">
+        <button id="btn-health">Обновить /health</button>
+        <button id="btn-info">Обновить /info</button>
+      </div>
+      <pre id="system-output">Нажмите кнопку для загрузки данных...</pre>
+    </section>
+
+    <section class="card">
+      <h2>Процент</h2>
+      <p>Рассчитать число, равное проценту <code>a</code> от числа <code>b</code>.</p>
+      <form id="percent-form">
+        <label>
+          a (%):
+          <input id="percent-a" type="number" step="any" required>
+        </label>
+        <label>
+          b:
+          <input id="percent-b" type="number" step="any" required>
+        </label>
+        <button type="submit">Рассчитать</button>
+      </form>
+      <pre id="percent-output">Введите значения и нажмите "Рассчитать"</pre>
+    </section>
+
+    <section class="card">
+      <h2>Факториал</h2>
+      <form id="factorial-form">
+        <label>
+          x (целое число):
+          <input id="factorial-x" type="number" step="1" required>
+        </label>
+        <button type="submit">Посчитать</button>
+      </form>
+      <pre id="factorial-output">Введите x и нажмите "Посчитать"</pre>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
